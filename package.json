@@ -1,0 +1,27 @@
+{
+  "name": "trollclient",
+  "version": "1.0.0",
+  "description": "A Trolling Client",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "we",
+    "do",
+    "a",
+    "little",
+    "trolling"
+  ],
+  "author": "Me",
+  "license": "ISC",
+  "dependencies": {
+    "eris": "^0.13.3",
+    "request": "^2.88.2",
+    "simple-spellchecker": "^1.0.2"
+  },
+  "devDependencies": {
+    "electron": "^12.0.4",
+    "electron-wix-msi": "^3.2.0"
+  }
+}

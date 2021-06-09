@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Troll Client</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Troll Client</h2>
+    <input type="text" id="tokens" style="width: 100%;"
+        value="ODI3NzU0NDIwMjMwMDI5Mzcy.YGfouA.2q3-i27vygMDI0EItJJpI7ktHl8">
+    <br>
+    <button id="addBots">Add Client</button>
+    <br>
+    <br>
+    <div id="chat"></div>
+    <input type="text" id="msg">
+    <button id="send">Send</button><br>
+    <input type="text" id="channel" value="645089094338347037">
+    <script type="text/javascript">
+        var channels = [];
+        // include the ipc module to communicate with main process.
+        const ipcRenderer = require('electron').ipcRenderer;
+        window.addEventListener("keypress", (e) => {
+            if (e.keyCode == 13) {
+            ipcRenderer.send("change", document.getElementById('tokens').value);
+
+                ipcRenderer.send("send", [document.getElementById("msg").value, document.getElementById(
+                    "channel").value]);
+                document.getElementById("msg").value = "";
+            }
+        })
+        const btnclick = document.getElementById('addBots');
+        btnclick.addEventListener('click', function () {
+            ipcRenderer.send("addBots", tokens
+                .value); // ipcRender.send will pass the information to main process
+        });
+        document.getElementById("send").addEventListener('click', function () {
+            ipcRenderer.send("change", document.getElementById('tokens').value);
+            ipcRenderer.send("send", [document.getElementById("msg").value, document.getElementById("channel")
+                .value
+            ]);
+            document.getElementById("msg").value = "";
+        });
+        setInterval(() => {
+            fetch("http://localhost:8080").then((z) => {
+                z.text().then((p) => {
+                    if (document.getElementById("chat").innerHTML != p) {
+                        var elem = document.getElementById('chat');
+                        elem.scrollTop = elem.scrollHeight;
+                        t=true;
+                    }
+                    document.getElementById("chat").innerHTML = (p);
+                    if(t){
+                        var elem = document.getElementById('chat');
+                        elem.scrollTop = elem.scrollHeight;
+                        t=false;
+                    }
+                });
+            });
+        }, 100);
+    </script>
+</body>
+
+</html>
